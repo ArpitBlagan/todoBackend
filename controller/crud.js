@@ -25,8 +25,8 @@ exports.del=asyncHandler(async(req,res)=>{
 exports.add=asyncHandler(async(req,res)=>{
     const {title,description,priority}=req.body;
     console.log(req.user);
-    const id=req.user.id;
-    const val=await tDB.create({title,description,priority,user_id:req.user.id});
+    const user_id=req.user.id;
+    const val=await tDB.create({title,description,priority,user_id});
     if(val){
         return res.status(202).json({msg:"done"});
     }

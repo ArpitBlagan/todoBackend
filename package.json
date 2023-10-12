@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "proxy":"*",
   "scripts": {
     "build":"npm install",
     "dev": "nodemon index.js",

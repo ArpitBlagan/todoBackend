@@ -1,0 +1,16 @@
+const express=require('express');
+const {Validate}=require('./middelware/Validate');
+const {register, login, forget, updateInfo, logout}=require('./controller/todo');
+const {add,upd,del,list}=require('./controller/crud');
+const Router=express.Router();
+Router.route('/register').post(register);
+Router.route('/login').post(login);
+Router.route('/forget').post(forget);
+Router.route('/cPass').post(updateInfo);
+Router.route('/logout').get(logout);
+Router.use(Validate);
+Router.route('/info').get(list);
+Router.route('/del').delete(del);
+Router.route('/add').post(add);
+Router.route('/update').put(upd);
+module.exports=Router;

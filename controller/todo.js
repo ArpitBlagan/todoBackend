@@ -35,7 +35,8 @@ exports.login=asyncHandler(async(req,res)=>{
         res.cookie("jwt",token,{
             //30 days in milisecond
             expires:new  Date(Date.now()+(30*24*60*60*1000)),
-            httpOnly:true
+            httpOnly:true,sameSite: 'none',
+            secure:true
         });
         return res.status(200).json({msg:"logged In"});
     }

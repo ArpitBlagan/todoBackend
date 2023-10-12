@@ -13,7 +13,7 @@ const {Error}=require('./middelware/Error');
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:["http://localhost:5173"],
+    origin:["http://localhost:5173","https://652816b2b12eff38d1dbc20c--enchanting-dusk-746b2b.netlify.app"],
     credentials:true
 }));
 app.use(Router);
